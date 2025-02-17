@@ -1,0 +1,24 @@
+{
+  "name": "t.g",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yogami9/motifta.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/yogami9/motifta/issues"
+  },
+  "homepage": "https://github.com/yogami9/motifta#readme",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
