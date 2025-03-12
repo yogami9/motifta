@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo.svg">
+    <title>Motifta - Our Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-primary: #20CDB4;
+            --color-dark: #1A1A1A;
+            --color-medium-gray: #2C2C2C;
+            --color-light: #F5F5E5;
+        }
+        body {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--color-primary), #8A4FFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-30 shadow-lg" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                    <span class="text-xl font-bold text-teal-400">Motifta</span>
+                </a>
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-300 transition-colors hover:text-teal-400">Home</a>
+                    <a href="/services.html" class="text-teal-400 transition-colors">Services</a>
+                    <a href="/process.html" class="text-gray-300 transition-colors hover:text-teal-400">Process</a>
+                    <a href="/about.html" class="text-gray-300 transition-colors hover:text-teal-400">About</a>
+                    <a href="/contact.html" class="text-gray-300 transition-colors hover:text-teal-400">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-300" aria-label="Open Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 hidden">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 text-white text-4xl" aria-label="Close Menu">×</button>
+        <nav class="flex flex-col items-center justify-center h-full space-y-6">
+            <a href="/" class="text-2xl text-white hover:text-teal-400">Home</a>
+            <a href="/services.html" class="text-2xl text-teal-400">Services</a>
+            <a href="/process.html" class="text-2xl text-white hover:text-teal-400">Process</a>
+            <a href="/about.html" class="text-2xl text-white hover:text-teal-400">About</a>
+            <a href="/contact.html" class="text-2xl text-white hover:text-teal-400">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                        Our <span class="gradient-text">Services</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        Building innovative solutions that drive business growth through cutting-edge technology
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Overview -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="service-card bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Custom Software</h3>
+                        <p class="text-gray-400">
+                            Enterprise-grade applications built for your specific needs
+                        </p>
+                    </div>
+
+                    <div class="service-card bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Cloud Solutions</h3>
+                        <p class="text-gray-400">
+                            Scalable infrastructure and cloud-native applications
+                        </p>
+                    </div>
+
+                    <div class="service-card bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M16 12l-4 4-4-4"></path>
+                            <path d="M12 8v8"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Mobile Development</h3>
+                        <p class="text-gray-400">
+                            Native and cross-platform mobile solutions
+                        </p>
+                    </div>
+
+                    <div class="service-card bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Cybersecurity</h3>
+                        <p class="text-gray-400">
+                            Comprehensive security and compliance solutions
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detailed Services -->
+        <section class="py-20" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <!-- Custom Software Development -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold mb-8 text-white">Custom Software Development</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Enterprise Applications</h3>
+                            <p class="text-gray-400 mb-6">
+                                Scalable, robust solutions tailored to your enterprise needs:
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Business Process Automation
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    ERP Integration
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Custom Workflows
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Web Applications</h3>
+                            <p class="text-gray-400 mb-6">
+                                Modern web solutions built with cutting-edge technologies:
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Progressive Web Apps
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Single Page Applications
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Real-time Applications
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cloud & Infrastructure -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold mb-8 text-white">Cloud & Infrastructure</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Cloud Solutions</h3>
+                            <p class="text-gray-400 mb-6">
+                                Comprehensive cloud services across major platforms:
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Multi-cloud Architecture
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Cloud Migration Strategies
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Serverless Computing
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">DevOps Services</h3>
+                            <p class="text-gray-400 mb-6">
+                                Streamline your development and operations:
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    CI/CD Implementation
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Infrastructure as Code
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Automated Deployment
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Emerging Technologies -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold mb-8 text-white">Emerging Technologies</h2>
+                    <div class="grid md:grid-cols-2 gap-8">
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">AI & Machine Learning</h3>
+                            <p class="text-gray-400 mb-6">
+                                Intelligent solutions for modern businesses:
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Predictive Analytics
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Natural Language Processing
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Machine Learning Models
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">IoT & Edge Computing</h3>
+                            <p class="text-gray-400 mb-6">
+                                Connect and optimize your physical infrastructure:
+                            </p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    IoT Platform Development
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Edge Computing Solutions
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Real-time Data Processing
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold mb-8 text-white">Cybersecurity</h2>
+                    <div class="service-card bg-gray-800 p-8 rounded-lg">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-4">Security Solutions</h3>
+                                <p class="text-gray-400 mb-6">
+                                    Comprehensive security measures to protect your digital assets:
+                                </p>
+                                <ul class="space-y-3 text-gray-300">
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                        </svg>
+                                        Security Assessments
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                        </svg>
+                                        OWASP Compliance
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                        </svg>
+                                        Penetration Testing
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-white mb-4">Ongoing Protection</h3>
+                                <p class="text-gray-400 mb-6">
+                                    Continuous monitoring and threat prevention:
+                                </p>
+                                <ul class="space-y-3 text-gray-300">
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                        </svg>
+                                        24/7 Security Monitoring
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                        </svg>
+                                        Threat Detection & Response
+                                    </li>
+                                    <li class="flex items-center">
+                                        <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                            <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                        </svg>
+                                        Security Updates & Patches
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Engagement Models -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold mb-8 text-white">Engagement Models</h2>
+                    <div class="grid md:grid-cols-3 gap-8">
+                        <!-- Fixed Price -->
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Fixed Price</h3>
+                            <p class="text-gray-400 mb-6">Perfect for well-defined projects with clear requirements.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Clear Milestones
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Defined Deliverables
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Fixed Budget
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Time & Material -->
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Time & Material</h3>
+                            <p class="text-gray-400 mb-6">Ideal for evolving projects with flexible requirements.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Flexible Scope
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Transparent Billing
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Scalable Resources
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Dedicated Team -->
+                        <div class="service-card bg-gray-800 p-8 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Dedicated Team</h3>
+                            <p class="text-gray-400 mb-6">Full-time team exclusively for your project needs.</p>
+                            <ul class="space-y-3 text-gray-300">
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Dedicated Resources
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Direct Communication
+                                </li>
+                                <li class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                        <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                    </svg>
+                                    Scalable Team Size
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technology Stack -->
+                <div class="mb-20">
+                    <h2 class="text-3xl font-bold mb-8 text-white">Our Technology Stack</h2>
+                    <div class="grid md:grid-cols-4 gap-8">
+                        <div class="service-card bg-gray-800 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Frontend</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>React</li>
+                                <li>Angular</li>
+                                <li>Vue.js</li>
+                            </ul>
+                        </div>
+                        <div class="service-card bg-gray-800 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Backend</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>Java Spring Boot</li>
+                                <li>Node.js</li>
+                                <li>Python Django</li>
+                            </ul>
+                        </div>
+                        <div class="service-card bg-gray-800 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Mobile</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>Swift</li>
+                                <li>Kotlin</li>
+                                <li>React Native</li>
+                            </ul>
+                        </div>
+                        <div class="service-card bg-gray-800 p-6 rounded-lg">
+                            <h3 class="text-xl font-semibold text-white mb-4">Cloud</h3>
+                            <ul class="space-y-2 text-gray-300">
+                                <li>AWS</li>
+                                <li>Microsoft Azure</li>
+                                <li>Google Cloud</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">Ready to Transform Your Business?</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+                    Let's discuss how our comprehensive services can elevate your business through innovative technology solutions.
+                </p>
+                <a href="/contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors group">
+                    Start Your Project
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                        <span class="text-xl font-bold text-teal-400">Motifta</span>
+                    </a>
+                    <p class="mt-4 text-gray-400">
+                        Transforming ideas into innovative digital solutions
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="text-gray-400 hover:text-teal-400">Services</a></li>
+                        <li><a href="/process.html" class="text-gray-400 hover:text-teal-400">Development Process</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-teal-400">About Us</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-teal-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: solutions@motifta.com</li>
+                        <li class="text-gray-400">Phone: +254 100473433</li>
+                        <li class="text-gray-400">WhatsApp: +254 100473433</li>
+                    </ul>
+                </div>
+
+                <!-- Inside the footer div with grid columns -->
+<div>
+    <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
+    <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/company/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./linkedIn.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.facebook.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./facebook.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.instagram.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./instagram.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.twitter.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./twitter.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.tiktok.com/@motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./tiktok.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://wa.me/+254791775477" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./whatsapp.webp" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+    </div>
+</div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400">
+                    © 2025 Motifta. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo.svg">
+    <title>Motifta - Contact Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-primary: #20CDB4;
+            --color-dark: #1A1A1A;
+            --color-medium-gray: #2C2C2C;
+            --color-light: #F5F5E5;
+        }
+        body {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .contact-method {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .contact-method:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-30 shadow-lg" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                    <span class="text-xl font-bold text-teal-400">Motifta</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-300 transition-colors hover:text-teal-400">Home</a>
+                    <a href="/services.html" class="text-gray-300 transition-colors hover:text-teal-400">Services</a>
+                    <a href="/process.html" class="text-gray-300 transition-colors hover:text-teal-400">Process</a>
+                    <a href="/about.html" class="text-gray-300 transition-colors hover:text-teal-400">About</a>
+                    <a href="/contact.html" class="text-teal-400 transition-colors">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-300" aria-label="Open Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 hidden">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 text-white text-4xl" aria-label="Close Menu">×</button>
+        <nav class="flex flex-col items-center justify-center h-full space-y-6">
+            <a href="/" class="text-2xl text-white hover:text-teal-400">Home</a>
+            <a href="/services.html" class="text-2xl text-white hover:text-teal-400">Services</a>
+            <a href="/process.html" class="text-2xl text-white hover:text-teal-400">Process</a>
+            <a href="/about.html" class="text-2xl text-white hover:text-teal-400">About</a>
+            <a href="/contact.html" class="text-2xl text-teal-400">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                        Get in <span class="text-teal-400">Touch</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        Have a project in mind? Let's discuss how we can help bring your digital vision to life.
+                    </p>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Methods -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="contact-method bg-gray-800 p-8 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Email Us</h3>
+                        <p class="text-gray-400 mb-4">Quick and direct communication</p>
+                        <a href="mailto:solutions@motifta.com" class="text-teal-400 hover:underline">
+                            solutions@motifta.com
+                        </a>
+                    </div>
+                    <div class="contact-method bg-gray-800 p-8 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Call Us</h3>
+                        <p class="text-gray-400 mb-4">Speak directly with our team</p>
+                        <a href="tel:+254791775477" class="text-teal-400 hover:underline">
+                            +254 100473433
+                        </a>
+                    </div>
+                    <div class="contact-method bg-gray-800 p-8 rounded-lg text-center">
+                        <img src="./whatsapp.webp" alt="LinkedIn" class="w-6 h-6" />
+                        <h3 class="text-xl font-semibold text-white mb-2">WhatsApp</h3>
+                        <p class="text-gray-400 mb-4">Instant messaging support</p>
+                        <a href="https://wa.me/+254791775477" target="_blank" rel="noopener noreferrer" class="text-teal-400 hover:underline">
+                            +254 100473433
+                        </a>
+                    </div>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="py-20" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg">
+                    <h2 class="text-3xl font-bold mb-6 text-white text-center">
+                        Start Your Journey
+                    </h2>
+                    <p class="text-gray-400 text-center mb-8">
+                        1. Schedule an initial consultation
+                        2. Explore your requirements
+                        3. Receive our tailored proposal
+                        4. Begin your digital transformation
+                    </p>
+                    <form id="contact-form" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="name" class="block text-sm font-medium text-gray-300 mb-2">
+                                    Full Name
+                                </label>
+                                <input type="text" id="name" name="name" required 
+                                       class="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300 mb-2">
+                                    Email Address
+                                </label>
+                                <input type="email" id="email" name="email" required 
+                                       class="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                            </div>
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-300 mb-2">
+                                Service of Interest
+                            </label>
+                            <select id="service" name="service" required 
+                                    class="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500">
+                                <option value="">Select a Service</option>
+                                <option value="custom-software">Custom Software Development</option>
+                                <option value="cloud-solutions">Cloud & Infrastructure</option>
+                                <option value="emerging-tech">Emerging Technologies</option>
+                                <option value="cybersecurity">Cybersecurity</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">
+                                Your Project Details
+                            </label>
+                            <textarea id="message" name="message" rows="6" required 
+                                      class="w-full px-4 py-3 bg-gray-700 text-white rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500" 
+                                      placeholder="Tell us about your project vision and requirements"></textarea>
+                        </div>
+                        <button type="submit" 
+                                class="w-full px-6 py-3 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors">
+                            Submit Project Inquiry
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                        <span class="text-xl font-bold text-teal-400">Motifta</span>
+                    </a>
+                    <p class="mt-4 text-gray-400">
+                        Transforming ideas into innovative digital solutions
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="text-gray-400 hover:text-teal-400">Services</a></li>
+                        <li><a href="/process.html" class="text-gray-400 hover:text-teal-400">Development Process</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-teal-400">About Us</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-teal-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: solutions@motifta.com</li>
+                        <li class="text-gray-400">Phone: +254 100473433</li>
+                        <li class="text-gray-400">WhatsApp: +254 100473433</li>
+                    </ul>
+                </div>
+
+                <!-- Inside the footer div with grid columns -->
+<div>
+    <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
+    <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/company/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./linkedIn.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.facebook.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./facebook.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.instagram.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./instagram.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.twitter.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./twitter.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.tiktok.com/@motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./tiktok.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://wa.me/+254791775477" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./whatsapp.webp" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+    </div>
+</div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400">
+                    © 2025 Motifta. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Contact Form Submission
+        const contactForm = document.getElementById('contact-form');
+        
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Collect form data
+            const formData = new FormData(contactForm);
+            const formObject = Object.fromEntries(formData.entries());
+
+            // Basic client-side validation
+            if (!formObject.name || !formObject.email || !formObject.service || !formObject.message) {
+                alert('Please fill out all required fields.');
+                return;
+            }
+
+            // Simulate form submission (replace with actual backend logic)
+            try {
+                // In a real-world scenario, you'd send this to a backend API
+                console.log('Form Submission Data:', formObject);
+                
+                // Show success message
+                alert('Thank you for your project inquiry! We will review your details and get back to you soon.');
+                
+                // Reset the form
+                contactForm.reset();
+            } catch (error) {
+                console.error('Submission error:', error);
+                alert('There was an error submitting your inquiry. Please try again.');
+            }
+        });
+
+        // Optional: Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

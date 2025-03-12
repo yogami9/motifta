@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo.svg">
+    <title>Motifta - About Us</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-primary: #20CDB4;
+            --color-dark: #1A1A1A;
+            --color-medium-gray: #2C2C2C;
+            --color-light: #F5F5E5;
+        }
+        body {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .team-member {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-30 shadow-lg" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                    <span class="text-xl font-bold text-teal-400">Motifta</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-300 transition-colors hover:text-teal-400">Home</a>
+                    <a href="/services.html" class="text-gray-300 transition-colors hover:text-teal-400">Services</a>
+                    <a href="/process.html" class="text-gray-300 transition-colors hover:text-teal-400">Process</a>
+                    <a href="/about.html" class="text-teal-400 transition-colors">About</a>
+                    <a href="/contact.html" class="text-gray-300 transition-colors hover:text-teal-400">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-300" aria-label="Open Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 hidden">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 text-white text-4xl" aria-label="Close Menu">
+            ×
+        </button>
+        <nav class="flex flex-col items-center justify-center h-full space-y-6">
+            <a href="/" class="text-2xl text-white hover:text-teal-400">Home</a>
+            <a href="/services.html" class="text-2xl text-white hover:text-teal-400">Services</a>
+            <a href="/process.html" class="text-2xl text-white hover:text-teal-400">Process</a>
+            <a href="/about.html" class="text-2xl text-teal-400">About</a>
+            <a href="/contact.html" class="text-2xl text-white hover:text-teal-400">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                        About <span class="text-teal-400">Motifta</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        We are more than just software developers; we are innovation architects transforming ideas into digital realities.
+                    </p>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Company Mission & Vision -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-white">Our Mission</h2>
+                        <p class="text-gray-400 text-lg mb-6">
+                            To deliver innovative software solutions that empower businesses to thrive in the digital age, through a combination of cutting-edge technology and strategic expertise.
+                        </p>
+                        <p class="text-gray-400 text-lg">
+                            We believe that software is not just code; it's the embodiment of our clients' visions. As a pioneer in custom software solutions, we tailor our services to meet the diverse needs of individuals and enterprises alike.
+                        </p>
+                    </div>
+                    <div>
+                        <h2 class="text-3xl font-bold mb-6 text-white">Our Vision</h2>
+                        <p class="text-gray-400 text-lg mb-6">
+                            We are launching Motifta with a bold vision: to become a transformative force in digital innovation. Our name combines "Motif" – representing patterns of excellence, and "ta" – symbolizing technological advancement.
+                        </p>
+                        <p class="text-gray-400 text-lg">
+                            We aim to be at the forefront of digital innovation, providing solutions that not only solve current challenges but anticipate future needs. By combining cutting-edge technologies with a deep understanding of human-centric design, we aspire to revolutionize how businesses approach digital transformation.
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Core Values -->
+        <section class="py-20" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Our Core Values</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        The principles that guide our work and define our approach
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                            <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Innovative Spirit</h3>
+                        <p class="text-gray-400">
+                            Challenging conventions and exploring new possibilities in technology
+                        </p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Client-First Approach</h3>
+                        <p class="text-gray-400">
+                            Building genuine partnerships, not just transactional projects
+                        </p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M14 9V5a3 3 0 0 0-3-3l-4 9v11h11.5a2 2 0 0 0 2-1.5l1.5-6a2 2 0 0 0-2-2.5h-5.5"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Quality Commitment</h3>
+                        <p class="text-gray-400">
+                            Setting new standards in software development excellence
+                        </p>
+                    </div>
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="8.5" cy="7" r="4"></circle>
+                            <line x1="20" y1="8" x2="20" y2="14"></line>
+                            <line x1="23" y1="11" x2="17" y2="11"></line>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Future-Ready Solutions</h3>
+                        <p class="text-gray-400">
+                            Creating sustainable and scalable technology for tomorrow
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Our Lead Team</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        A forward-thinking team of innovative developers, architects, and digital strategists
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="team-member bg-gray-800 p-6 rounded-lg text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-gray-700 rounded-full"></div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Wycliffe Cheruiyot</h3>
+                        <p class="text-teal-400 mb-2">CEO & Founder</p>
+                        <p class="text-gray-400">
+                            Visionary leader driving Motifta's strategic development and innovation
+                        </p>
+                    </div>
+                    <div class="team-member bg-gray-800 p-6 rounded-lg text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-gray-700 rounded-full"></div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Elvis Juma</h3>
+                        <p class="text-teal-400 mb-2">CTO</p>
+                        <p class="text-gray-400">
+                            Technical expert specializing in cutting-edge technology solutions
+                        </p>
+                    </div>
+                    <div class="team-member bg-gray-800 p-6 rounded-lg text-center">
+                        <div class="w-32 h-32 mx-auto mb-4 bg-gray-700 rounded-full"></div>
+                        <h3 class="text-xl font-semibold text-white mb-2">Newton Goko</h3>
+                        <p class="text-teal-400 mb-2">Chief Design Officer</p>
+                        <p class="text-gray-400">
+                            Design strategist creating user-centric experiences that drive engagement
+                        </p>
+                    </div>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-20" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">
+                    Let's Shape the Future Together</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+                        Ready to transform your digital vision into reality? Connect with our team of innovative experts.
+                    </p>
+                    <a href="/contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors group">
+                        Contact Us
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                        <span class="text-xl font-bold text-teal-400">Motifta</span>
+                    </a>
+                    <p class="mt-4 text-gray-400">
+                        Transforming ideas into innovative digital solutions
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="text-gray-400 hover:text-teal-400">Services</a></li>
+                        <li><a href="/process.html" class="text-gray-400 hover:text-teal-400">Development Process</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-teal-400">About Us</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-teal-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: solutions@motifta.com</li>
+                        <li class="text-gray-400">Phone: +254 100473433</li>
+                        <li class="text-gray-400">WhatsApp: +254 100473433</li>
+                    </ul>
+                </div>
+
+                <!-- Inside the footer div with grid columns -->
+<div>
+    <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
+    <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/company/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./linkedIn.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.facebook.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./facebook.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.instagram.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./instagram.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.twitter.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./twitter.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.tiktok.com/@motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./tiktok.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://wa.me/+254791775477" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./whatsapp.webp" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+    </div>
+</div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400">
+                    © 2025 Motifta. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Optional: Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

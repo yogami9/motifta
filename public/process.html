@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo.svg">
+    <title>Motifta - Development Process</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-primary: #20CDB4;
+            --color-dark: #1A1A1A;
+            --color-medium-gray: #2C2C2C;
+            --color-light: #F5F5E5;
+        }
+        body {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .process-step {
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .process-step:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--color-primary), #8A4FFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-30 shadow-lg" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                    <span class="text-xl font-bold text-teal-400">Motifta</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-gray-300 transition-colors hover:text-teal-400">Home</a>
+                    <a href="/services.html" class="text-gray-300 transition-colors hover:text-teal-400">Services</a>
+                    <a href="/process.html" class="text-teal-400 transition-colors">Process</a>
+                    <a href="/about.html" class="text-gray-300 transition-colors hover:text-teal-400">About</a>
+                    <a href="/contact.html" class="text-gray-300 transition-colors hover:text-teal-400">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-300" aria-label="Open Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 hidden">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 text-white text-4xl" aria-label="Close Menu">×</button>
+        <nav class="flex flex-col items-center justify-center h-full space-y-6">
+            <a href="/" class="text-2xl text-white hover:text-teal-400">Home</a>
+            <a href="/services.html" class="text-2xl text-white hover:text-teal-400">Services</a>
+            <a href="/process.html" class="text-2xl text-teal-400">Process</a>
+            <a href="/about.html" class="text-2xl text-white hover:text-teal-400">About</a>
+            <a href="/contact.html" class="text-2xl text-white hover:text-teal-400">Contact</a>
+        </nav>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-white">
+                        Our Development <span class="gradient-text">Process</span>
+                    </h1>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        A refined agile methodology that ensures quality, transparency, and successful delivery
+                    </p>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Overview -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4">
+                <div class="max-w-4xl mx-auto">
+                    <div class="grid gap-8">
+                        <!-- Discovery -->
+                        <div class="process-step bg-gray-800 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-2xl font-bold text-white">1</span>
+                                </div>
+                                <h2 class="text-2xl font-bold text-white">Discovery Phase</h2>
+                            </div>
+                            <p class="text-gray-400 mb-6">
+                                Deep understanding of client needs through collaborative workshops and detailed requirements gathering.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Key Activities</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Initial Consultation
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Requirements Gathering
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Goal Alignment
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Deliverables</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Project Scope Document
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Initial Project Roadmap
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Stakeholder Alignment
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Design -->
+                        <div class="process-step bg-gray-800 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-2xl font-bold text-white">2</span>
+                                </div>
+                                <h2 class="text-2xl font-bold text-white">Design Phase</h2>
+                            </div>
+                            <p class="text-gray-400 mb-6">
+                                Collaborative solution architecture that sets the foundation for successful development.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Design Activities</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Solution Architecture
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            UX/UI Design
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Technical Planning
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Design Outputs</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Technical Specifications
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Design Documents
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Development Roadmap
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Development -->
+                        <div class="process-step bg-gray-800 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-2xl font-bold text-white">3</span>
+                                </div>
+                                <h2 class="text-2xl font-bold text-white">Development Phase</h2>
+                            </div>
+                            <p class="text-gray-400 mb-6">
+                                Iterative, quality-focused coding with continuous integration and regular check-ins.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Development Process</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Agile Sprints
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Continuous Integration
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Regular Check-ins
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Quality Measures</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Code Reviews
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Unit Testing
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Integration Testing
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testing & QA -->
+                        <div class="process-step bg-gray-800 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-2xl font-bold text-white">4</span>
+                                </div>
+                                <h2 class="text-2xl font-bold text-white">Testing & QA Phase</h2>
+                            </div>
+                            <p class="text-gray-400 mb-6">
+                                Comprehensive testing and quality assurance to ensure reliable, secure, and performant solutions.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Testing Framework</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Automated Testing
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Performance Testing
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Security Testing
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Quality Standards</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Code Quality Metrics
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Performance Benchmarks
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Security Standards
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Deployment -->
+                        <div class="process-step bg-gray-800 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-2xl font-bold text-white">5</span>
+                                </div>
+                                <h2 class="text-2xl font-bold text-white">Deployment Phase</h2>
+                            </div>
+                            <p class="text-gray-400 mb-6">
+                                Smooth, secure deployment with comprehensive testing and validation.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Deployment Process</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Staging Environment Testing
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Production Deployment
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Performance Monitoring
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Post-Deployment</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            User Training
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Documentation Handover
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Support Transition
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Maintenance & Support -->
+                        <div class="process-step bg-gray-800 p-8 rounded-lg">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 bg-teal-500 rounded-full flex items-center justify-center mr-4">
+                                    <span class="text-2xl font-bold text-white">6</span>
+                                </div>
+                                <h2 class="text-2xl font-bold text-white">Maintenance & Support</h2>
+                            </div>
+                            <p class="text-gray-400 mb-6">
+                                Ongoing support and maintenance to ensure long-term success of your solution.
+                            </p>
+                            <div class="grid md:grid-cols-2 gap-6">
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Support Services</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            24/7 Technical Support
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Regular Maintenance
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Performance Monitoring
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="bg-gray-700 p-4 rounded">
+                                    <h3 class="font-semibold text-white mb-2">Continuous Improvement</h3>
+                                    <ul class="text-gray-300 space-y-2">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Feature Enhancements
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Security Updates
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                            </svg>
+                                            Performance Optimization
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quality Commitment -->
+        <section class="py-20" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <h2 class="text-3xl font-bold mb-12 text-white text-center">Our Quality Commitment</h2>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">Testing Framework</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Comprehensive Unit Testing
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Integration Testing
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Performance Testing
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">Security Standards</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                OWASP Compliance
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Regular Security Audits
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Vulnerability Assessment
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="bg-gray-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">Code Quality</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Code Reviews
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Best Practices
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>Documentation Standards
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mt-16 animate-bounce">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                        <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                        <polyline points="8 12 12 16 16 12"></polyline>
+                        <line x1="12" y1="8" x2="12" y2="16"></line>
+                    </svg>
+                    <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">Ready to Start Your Project?</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+                    Let's discuss how our proven development process can bring your vision to life.
+                </p>
+                <a href="/contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors group">
+                    Get Started
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                        <span class="text-xl font-bold text-teal-400">Motifta</span>
+                    </a>
+                    <p class="mt-4 text-gray-400">
+                        Transforming ideas into innovative digital solutions
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="text-gray-400 hover:text-teal-400">Services</a></li>
+                        <li><a href="/process.html" class="text-gray-400 hover:text-teal-400">Development Process</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-teal-400">About Us</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-teal-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: solutions@motifta.com</li>
+                        <li class="text-gray-400">Phone: +254 100473433</li>
+                        <li class="text-gray-400">WhatsApp: +254 100473433</li>
+                    </ul>
+                </div>
+
+                <!-- Inside the footer div with grid columns -->
+<div>
+    <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
+    <div class="flex space-x-4">
+        <a href="https://www.linkedin.com/company/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./linkedIn.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.facebook.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./facebook.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.instagram.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./instagram.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.twitter.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./twitter.png" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://www.tiktok.com/@motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./tiktok.jpeg" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+        <a href="https://wa.me/+254791775477" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+            <img src="./whatsapp.webp" alt="LinkedIn" class="w-6 h-6" />
+        </a>
+    </div>
+</div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400">
+                    © 2025 Motifta. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Optional: Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

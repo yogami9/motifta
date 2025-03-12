@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="16x16" href="./logo.svg">
+    <title>Motifta - Pioneering the Future of Software Development</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --color-primary: #20CDB4;
+            --color-dark: #1A1A1A;
+            --color-medium-gray: #2C2C2C;
+            --color-light: #F5F5E5;
+        }
+        body {
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .gradient-text {
+            background: linear-gradient(to right, var(--color-primary), #8A4FFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .service-card {
+            transition: all 0.3s ease;
+        }
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+        .animate-bounce {
+            animation: bounce 2s infinite ease-in-out;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-30 shadow-lg" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="flex items-center space-x-2">
+                    <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                    <span class="text-xl font-bold text-teal-400">Motifta</span>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex space-x-8">
+                    <a href="/" class="text-teal-400 transition-colors">Home</a>
+                    <a href="/services.html" class="text-gray-300 transition-colors hover:text-teal-400">Services</a>
+                    <a href="/process.html" class="text-gray-300 transition-colors hover:text-teal-400">Process</a>
+                    <a href="/about.html" class="text-gray-300 transition-colors hover:text-teal-400">About</a>
+                    <a href="/contact.html" class="text-gray-300 transition-colors hover:text-teal-400">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-toggle" class="md:hidden text-gray-300" aria-label="Open Mobile Menu">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <line x1="3" y1="12" x2="21" y2="12"></line>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <line x1="3" y1="18" x2="21" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-40 hidden">
+        <button id="close-mobile-menu" class="absolute top-4 right-4 text-white text-4xl" aria-label="Close Menu">×</button>
+        <nav class="flex flex-col items-center justify-center h-full space-y-6">
+            <a href="/" class="text-2xl text-teal-400">Home</a>
+            <a href="/services.html" class="text-2xl text-white hover:text-teal-400">Services</a>
+            <a href="/process.html" class="text-2xl text-white hover:text-teal-400">Process</a>
+            <a href="/about.html" class="text-2xl text-white hover:text-teal-400">About</a>
+            <a href="/contact.html" class="text-2xl text-white hover:text-teal-400">Contact</a>
+        </nav>
+    </div>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="py-20 md:py-32" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+                        Pioneering the <span class="gradient-text">Future of Software</span>
+                    </h1>
+                    <p class="text-xl text-white font-semibold mb-4 max-w-3xl mx-auto">
+                        Transforming ideas into powerful software solutions that drive innovation.
+                    </p>
+                    <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+                        "Motif" represents patterns of excellence, "ta" symbolizes technological advancement. Together, we're revolutionizing digital transformation.
+                    </p>
+                    <div class="mt-10">
+                        <a href="/contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors group">
+                            Start Your Transformation
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <!-- Scroll Down Indicator -->
+                    <div class="mt-16 animate-bounce">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                            <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                            <polyline points="8 12 12 16 16 12"></polyline>
+                            <line x1="12" y1="8" x2="12" y2="16"></line>
+                        </svg>
+                        <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+                    </div>
+                </div>
+            </div>
+            
+            
+        </section>
+
+        <!-- Vision Section -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4">
+                <div class="grid md:grid-cols-2 gap-12">
+                    <div class="service-card bg-gray-800 p-8 rounded-lg">
+                        <h2 class="text-3xl font-bold mb-6 text-white">Our Vision</h2>
+                        <p class="text-gray-400 text-lg mb-6">
+                            We envision a future where technology is a seamless extension of human creativity. Our goal is to be at the forefront of digital innovation, providing solutions that not only solve current challenges but anticipate future needs.
+                        </p>
+                        <a href="/about.html" class="text-teal-400 hover:text-teal-300 inline-flex items-center">
+                            Learn More
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                    <div class="service-card bg-gray-800 p-8 rounded-lg">
+                        <h2 class="text-3xl font-bold mb-6 text-white">Our Mission</h2>
+                        <p class="text-gray-400 text-lg mb-6">
+                            To deliver innovative software solutions that empower businesses to thrive in the digital age, through a combination of cutting-edge technology and strategic expertise.
+                        </p>
+                        <a href="/services.html" class="text-teal-400 hover:text-teal-300 inline-flex items-center">
+                            Our Services
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <!-- Scroll Down Indicator -->
+            <div class="mt-16 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                    <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                    <polyline points="8 12 12 16 16 12"></polyline>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                </svg>
+                <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+            </div>
+            </div>
+        </section>
+
+        <!-- Core Services -->
+        <section class="py-20" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Our Core Services</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Comprehensive solutions tailored to transform your business through innovative technology
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Custom Software Development -->
+                    <div class="service-card bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="9" y1="21" x2="9" y2="9"></line>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Custom Software</h3>
+                        <p class="text-gray-400">
+                            Bespoke solutions crafted for your unique business needs
+                        </p>
+                    </div>
+
+                    <!-- Cloud & Infrastructure -->
+                    <div class="service-card bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M12 2L2 7l10 5 10-5-10-5z"></path>
+                            <path d="M2 17l10 5 10-5"></path>
+                            <path d="M2 12l10 5 10-5"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Cloud Solutions</h3>
+                        <p class="text-gray-400">
+                            Scalable infrastructure and cloud-native applications
+                        </p>
+                    </div>
+
+                    <!-- Emerging Technologies -->
+                    <div class="service-card bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline>
+                            <line x1="12" y1="22.08" x2="12" y2="12"></line>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">AI & IoT</h3>
+                        <p class="text-gray-400">
+                            Innovative solutions using emerging technologies
+                        </p>
+                    </div>
+
+                    <!-- Cybersecurity -->
+                    <div class="service-card bg-gray-800 p-6 rounded-lg text-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto mb-4">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <h3 class="text-xl font-semibold text-white mb-2">Cybersecurity</h3>
+                        <p class="text-gray-400">
+                            Comprehensive security and compliance solutions
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Down Indicator -->
+            <div class="mt-16 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                    <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                    <polyline points="8 12 12 16 16 12"></polyline>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                </svg>
+                <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+            </div>
+        </section>
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Our Technology Stack</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        We leverage cutting-edge technologies to deliver robust solutions
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                    <!-- Frontend -->
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <h3 class="text-lg font-semibold text-white mb-4">Frontend</h3>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>React</li>
+                            <li>Angular</li>
+                            <li>Vue.js</li>
+                        </ul>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <h3 class="text-lg font-semibold text-white mb-4">Backend</h3>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>Java Spring Boot</li>
+                            <li>Node.js</li>
+                            <li>Python Django</li>
+                        </ul>
+                    </div>
+
+                    <!-- Mobile -->
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <h3 class="text-lg font-semibold text-white mb-4">Mobile</h3>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>Swift</li>
+                            <li>Kotlin</li>
+                            <li>React Native</li>
+                        </ul>
+                    </div>
+
+                    <!-- Cloud -->
+                    <div class="bg-gray-800 p-6 rounded-lg text-center">
+                        <h3 class="text-lg font-semibold text-white mb-4">Cloud</h3>
+                        <ul class="text-gray-400 space-y-2">
+                            <li>AWS</li>
+                            <li>Microsoft Azure</li>
+                            <li>Google Cloud</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Down Indicator -->
+            <div class="mt-16 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                    <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                    <polyline points="8 12 12 16 16 12"></polyline>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                </svg>
+                <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+            </div>
+        </section>
+
+        <!-- Why Choose Us -->
+        <section class="py-20" style="background-color: var(--color-dark)">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl font-bold mb-4 text-white">Why Choose Motifta</h2>
+                    <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+                        Experience excellence in software development through our unique approach
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-8">
+                    <!-- Technical Excellence -->
+                    <div class="service-card bg-gray-800 p-8 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">Technical Excellence</h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Modern technology stack
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Quality-driven development
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Security-first approach
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Partnership Approach -->
+                    <div class="service-card bg-gray-800 p-8 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">Partnership Approach</h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Transparent communication
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Collaborative development
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Long-term commitment
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Innovation Focus -->
+                    <div class="service-card bg-gray-800 p-8 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white mb-4">Innovation Focus</h3>
+                        <ul class="space-y-3 text-gray-400">
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Emerging technology adoption
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Continuous learning
+                            </li>
+                            <li class="flex items-center">
+                                <svg class="w-5 h-5 mr-2 text-teal-400" fill="currentColor" viewBox="0 0 20 20">
+                                    <path d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"></path>
+                                </svg>
+                                Research-driven development
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Scroll Down Indicator -->
+            <div class="mt-16 animate-bounce">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" viewBox="0 0 24 24" fill="none" stroke="#20CDB4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="mx-auto cursor-pointer" onClick="window.scrollBy({top: window.innerHeight, behavior: 'smooth'})">
+                    <circle cx="12" cy="12" r="10" stroke="#20CDB4" stroke-width="1" fill="transparent"></circle>
+                    <polyline points="8 12 12 16 16 12"></polyline>
+                    <line x1="12" y1="8" x2="12" y2="16"></line>
+                </svg>
+                <p class="text-teal-400 text-sm mt-2 text-center">Scroll Down</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="py-20" style="background-color: var(--color-medium-gray)">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold mb-4 text-white">Start Your Digital Transformation</h2>
+                <p class="text-xl text-gray-400 max-w-2xl mx-auto mb-8">
+                    Ready to transform your vision into reality? Let's build something extraordinary together.
+                </p>
+                <a href="/contact.html" class="inline-flex items-center justify-center px-8 py-4 bg-teal-500 text-white rounded-lg hover:bg-teal-600 transition-colors group">
+                    Get Started
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="ml-2 group-hover:translate-x-1 transition-transform">
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                        <polyline points="12 5 19 12 12 19"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-12" style="background-color: var(--color-dark)">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <a href="/" class="flex items-center space-x-2">
+                        <img src="./logo.svg" alt="Motifta Logo" class="w-9 h-9" />
+                        <span class="text-xl font-bold text-teal-400">Motifta</span>
+                    </a>
+                    <p class="mt-4 text-gray-400">
+                        Transforming ideas into innovative digital solutions
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="/services.html" class="text-gray-400 hover:text-teal-400">Services</a></li>
+                        <li><a href="/process.html" class="text-gray-400 hover:text-teal-400">Development Process</a></li>
+                        <li><a href="/about.html" class="text-gray-400 hover:text-teal-400">About Us</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-teal-400">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Contact Info</h3>
+                    <ul class="space-y-2">
+                        <li class="text-gray-400">Email: solutions@motifta.com</li>
+                        <li class="text-gray-400">Phone: +254 100473433</li>
+                        <li class="text-gray-400">WhatsApp: +254 100473433</li>
+                    </ul>
+                </div>
+
+                <!-- Inside the footer div with grid columns -->
+                <div>
+                    <h3 class="text-xl font-semibold mb-4 text-white">Connect With Us</h3>
+                    <div class="flex space-x-4">
+                        <a href="https://www.linkedin.com/company/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+                            <img src="./linkedIn.png" alt="LinkedIn" class="w-6 h-6" />
+                        </a>
+                        <a href="https://www.facebook.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+                            <img src="./facebook.jpeg" alt="LinkedIn" class="w-6 h-6" />
+                        </a>
+                        <a href="https://www.instagram.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+                            <img src="./instagram.jpeg" alt="LinkedIn" class="w-6 h-6" />
+                        </a>
+                        <a href="https://www.twitter.com/motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+                            <img src="./twitter.png" alt="LinkedIn" class="w-6 h-6" />
+                        </a>
+                        <a href="https://www.tiktok.com/@motifta" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+                            <img src="./tiktok.jpeg" alt="LinkedIn" class="w-6 h-6" />
+                        </a>
+                        <a href="https://wa.me/+254791775477" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-400">
+                            <img src="./whatsapp.webp" alt="LinkedIn" class="w-6 h-6" />
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 pt-8 border-t border-gray-700 text-center">
+                <p class="text-gray-400">
+                    © 2025 Motifta. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMobileMenu = document.getElementById('close-mobile-menu');
+
+        mobileMenuToggle.addEventListener('click', () => {
+            mobileMenu.classList.remove('hidden');
+        });
+
+        closeMobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+        });
+
+        // Optional: Smooth scrolling for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                
+                if (targetElement) {
+                    targetElement.scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
